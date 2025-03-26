@@ -1,16 +1,19 @@
-import React from 'react'
-const Images = ({data})=>
-{
-    return(
+import React from 'react';
 
-    <div className="row">
-             {data.map((image) =>
-             <div key={image.id}>
-                <div className="col-md-6">
-                     <img src={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_m.jpg`} 
-                        height="200" width="250" alt={image.title}/>
-                </div>
-             </div>)}
-    </div>)
-}
-export default Images
+const Images = ({ data }) => {
+  return (
+    <div className="row image-gallery">
+      {data.map((image) => (
+        <div key={image.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <img
+            src={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_m.jpg`}
+            className="img-fluid gallery-img"
+            alt={image.title}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Images;
